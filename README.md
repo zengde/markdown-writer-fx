@@ -7,6 +7,8 @@ An open source [Markdown] editor written in JavaFX 8.
 
 ![Markdown Writer FX Screenshot](images/screenshot.png)
 
+![Markdown Writer FX Screenshot](images/screenshot_zh.png)
+
 For Markdown processing it uses [pegdown], which is nearly 100% compatible with the original [Markdown] specification and also supports parts of [Markdown Extra], [MultiMarkdown] and [Github-flavoured-Markdown].
 
 Features

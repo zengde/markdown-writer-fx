@@ -35,6 +35,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import org.markdownwriterfx.util.Item;
+import org.markdownwriterfx.util.ResUtil;
 import org.tbee.javafx.scene.layout.fxml.MigPane;
 
 /**
@@ -52,7 +53,7 @@ public class GeneralOptionsPane
 		String defaultLineSeparator = System.getProperty( "line.separator", "\n" );
 		String defaultLineSeparatorStr = defaultLineSeparator.replace("\r", "CR").replace("\n", "LF");
 		lineSeparatorField.getItems().addAll(
-			new Item<String>( "Platform Default (" + defaultLineSeparatorStr + ')', null ),
+			new Item<String>(ResUtil.getString("Options_PlatformDefault")+" (" + defaultLineSeparatorStr + ')', null ),
 			new Item<String>( "Windows (CRLF)", "\r\n" ),
 			new Item<String>( "Unix (LF)", "\n" ));
 
@@ -63,7 +64,7 @@ public class GeneralOptionsPane
 		SortedMap<String, Charset> availableCharsets = Charset.availableCharsets();
 
 		ArrayList<Item<String>> values = new ArrayList<>(1 + availableCharsets.size());
-		values.add(new Item<String>("Platform Default (" + Charset.defaultCharset().name() + ')', null));
+		values.add(new Item<String>(ResUtil.getString("Options_PlatformDefault")+" (" + Charset.defaultCharset().name() + ')', null));
 		for (String name : availableCharsets.keySet())
 			values.add(new Item<String>(name, name));
 		return values;
