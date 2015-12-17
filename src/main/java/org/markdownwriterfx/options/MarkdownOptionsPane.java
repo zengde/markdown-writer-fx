@@ -32,6 +32,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.control.Label;
 import org.markdownwriterfx.controls.FlagCheckBox;
 import org.markdownwriterfx.controls.WebHyperlink;
+import org.markdownwriterfx.util.ResUtil;
 import org.pegdown.Extensions;
 import org.tbee.javafx.scene.layout.fxml.MigPane;
 
@@ -132,15 +133,15 @@ class MarkdownOptionsPane
 		setRows("[][][][][][][][][][][][][][][][][][]");
 
 		//---- smartsExtCheckBox ----
-		smartsExtCheckBox.setText("Beautify apostrophes, _ellipses (\"...\" and \". . .\") and dashes (\"--\" and \"---\")");
+		smartsExtCheckBox.setText(ResUtil.getString("smartsExtCheckBox"));
 		add(smartsExtCheckBox, "cell 0 0");
 
 		//---- quotesExtCheckBox ----
-		quotesExtCheckBox.setText("Beautify single _quotes, double quotes and double angle quotes (\u00ab and \u00bb)");
+		quotesExtCheckBox.setText(ResUtil.getString("quotesExtCheckBox"));
 		add(quotesExtCheckBox, "cell 0 1");
 
 		//---- abbreviationsExtCheckBox ----
-		abbreviationsExtCheckBox.setText("A_bbreviations in the way of");
+		abbreviationsExtCheckBox.setText(ResUtil.getString("abbreviationsExtCheckBox"));
 		add(abbreviationsExtCheckBox, "cell 0 2");
 
 		//---- abbreviationsExtLink ----
@@ -149,7 +150,7 @@ class MarkdownOptionsPane
 		add(abbreviationsExtLink, "cell 0 2,gapx 0");
 
 		//---- hardwrapsExtCheckBox ----
-		hardwrapsExtCheckBox.setText("_Newlines in paragraph-like content as real line breaks, see");
+		hardwrapsExtCheckBox.setText(ResUtil.getString("hardwrapsExtCheckBox"));
 		add(hardwrapsExtCheckBox, "cell 0 3");
 
 		//---- hardwrapsExtLink ----
@@ -158,7 +159,7 @@ class MarkdownOptionsPane
 		add(hardwrapsExtLink, "cell 0 3,gapx 0");
 
 		//---- autolinksExtCheckBox ----
-		autolinksExtCheckBox.setText("_Plain (undelimited) autolinks in the way of");
+		autolinksExtCheckBox.setText(ResUtil.getString("autolinksExtCheckBox"));
 		add(autolinksExtCheckBox, "cell 0 4");
 
 		//---- autolinksExtLink ----
@@ -167,7 +168,7 @@ class MarkdownOptionsPane
 		add(autolinksExtLink, "cell 0 4,gapx 0");
 
 		//---- tablesExtCheckBox ----
-		tablesExtCheckBox.setText("_Tables similar to");
+		tablesExtCheckBox.setText(ResUtil.getString("tablesExtCheckBox"));
 		add(tablesExtCheckBox, "cell 0 5");
 
 		//---- tablesExtLink ----
@@ -176,7 +177,7 @@ class MarkdownOptionsPane
 		add(tablesExtLink, "cell 0 5,gapx 0");
 
 		//---- tablesExtLabel ----
-		tablesExtLabel.setText("(like");
+		tablesExtLabel.setText(ResUtil.getString("tablesExtLabel"));
 		add(tablesExtLabel, "cell 0 5,gapx 3");
 
 		//---- tablesExtLink2 ----
@@ -185,11 +186,11 @@ class MarkdownOptionsPane
 		add(tablesExtLink2, "cell 0 5,gapx 3 3");
 
 		//---- tablesExtLabel2 ----
-		tablesExtLabel2.setText(" tables, but with colspan support)");
+		tablesExtLabel2.setText(ResUtil.getString("tablesExtLabel2"));
 		add(tablesExtLabel2, "cell 0 5,gapx 0");
 
 		//---- definitionListsExtCheckBox ----
-		definitionListsExtCheckBox.setText("_Definition lists in the way of");
+		definitionListsExtCheckBox.setText(ResUtil.getString("definitionListsExtCheckBox"));
 		add(definitionListsExtCheckBox, "cell 0 6");
 
 		//---- definitionListsExtLink ----
@@ -198,7 +199,7 @@ class MarkdownOptionsPane
 		add(definitionListsExtLink, "cell 0 6,gapx 0");
 
 		//---- fencedCodeBlocksExtCheckBox ----
-		fencedCodeBlocksExtCheckBox.setText("_Fenced Code Blocks in the way of");
+		fencedCodeBlocksExtCheckBox.setText(ResUtil.getString("fencedCodeBlocksExtCheckBox"));
 		add(fencedCodeBlocksExtCheckBox, "cell 0 7");
 
 		//---- fencedCodeBlocksExtLink ----
@@ -207,7 +208,7 @@ class MarkdownOptionsPane
 		add(fencedCodeBlocksExtLink, "cell 0 7,gapx 0");
 
 		//---- fencedCodeBlocksExtLabel ----
-		fencedCodeBlocksExtLabel.setText("or");
+		fencedCodeBlocksExtLabel.setText(ResUtil.getString("or"));
 		add(fencedCodeBlocksExtLabel, "cell 0 7,gapx 3");
 
 		//---- fencedCodeBlocksExtLink2 ----
@@ -216,43 +217,43 @@ class MarkdownOptionsPane
 		add(fencedCodeBlocksExtLink2, "cell 0 7,gapx 3");
 
 		//---- wikilinksExtCheckBox ----
-		wikilinksExtCheckBox.setText("_Wiki-style links (\"[[wiki link]]\")");
+		wikilinksExtCheckBox.setText(ResUtil.getString("wikiLinks"));
 		add(wikilinksExtCheckBox, "cell 0 8");
 
 		//---- strikethroughExtCheckBox ----
-		strikethroughExtCheckBox.setText("_Strikethrough");
+		strikethroughExtCheckBox.setText(ResUtil.getString("strikethrough"));
 		add(strikethroughExtCheckBox, "cell 0 9");
 
 		//---- anchorlinksExtCheckBox ----
-		anchorlinksExtCheckBox.setText("_Anchor links in headers");
+		anchorlinksExtCheckBox.setText(ResUtil.getString("anchorlinksExtCheckBox"));
 		add(anchorlinksExtCheckBox, "cell 0 10");
 
 		//---- suppressHtmlBlocksExtCheckBox ----
-		suppressHtmlBlocksExtCheckBox.setText("Suppress the _output of HTML blocks");
+		suppressHtmlBlocksExtCheckBox.setText(ResUtil.getString("suppressHtmlBlocksExtCheckBox"));
 		add(suppressHtmlBlocksExtCheckBox, "cell 0 11");
 
 		//---- suppressInlineHtmlExtCheckBox ----
-		suppressInlineHtmlExtCheckBox.setText("Suppress the o_utput of inline HTML elements");
+		suppressInlineHtmlExtCheckBox.setText(ResUtil.getString("suppressInlineHtmlExtCheckBox"));
 		add(suppressInlineHtmlExtCheckBox, "cell 0 12");
 
 		//---- atxHeaderSpaceExtCheckBox ----
-		atxHeaderSpaceExtCheckBox.setText("Requires a space char after Atx # header prefixes, so that #dasdsdaf is not a header");
+		atxHeaderSpaceExtCheckBox.setText(ResUtil.getString("atxHeaderSpaceExtCheckBox"));
 		add(atxHeaderSpaceExtCheckBox, "cell 0 13");
 
 		//---- forceListItemParaExtCheckBox ----
-		forceListItemParaExtCheckBox.setText("Force List and Definition Paragraph wrapping if it includes more than just a single paragraph");
+		forceListItemParaExtCheckBox.setText(ResUtil.getString("forceListItemParaExtCheckBox"));
 		add(forceListItemParaExtCheckBox, "cell 0 14");
 
 		//---- relaxedHrRulesExtCheckBox ----
-		relaxedHrRulesExtCheckBox.setText("Allow horizontal rules without a blank line following them");
+		relaxedHrRulesExtCheckBox.setText(ResUtil.getString("relaxedHrRulesExtCheckBox"));
 		add(relaxedHrRulesExtCheckBox, "cell 0 15");
 
 		//---- taskListItemsExtCheckBox ----
-		taskListItemsExtCheckBox.setText("GitHub style task list items");
+		taskListItemsExtCheckBox.setText(ResUtil.getString("taskListItemsExtCheckBox"));
 		add(taskListItemsExtCheckBox, "cell 0 16");
 
 		//---- extAnchorLinksExtCheckBox ----
-		extAnchorLinksExtCheckBox.setText("Generate anchor links for headers using complete contents of the header");
+		extAnchorLinksExtCheckBox.setText(ResUtil.getString("extAnchorLinksExtCheckBox"));
 		add(extAnchorLinksExtCheckBox, "cell 0 17");
 		// JFormDesigner - End of component initialization  //GEN-END:initComponents
 	}

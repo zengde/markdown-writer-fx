@@ -55,6 +55,7 @@ import org.fxmisc.wellbehaved.event.EventPattern;
 import org.markdownwriterfx.editor.MarkdownEditorPane;
 import org.markdownwriterfx.options.Options;
 import org.markdownwriterfx.preview.MarkdownPreviewPane;
+import org.markdownwriterfx.util.ResUtil;
 
 /**
  * Editor for a single file.
@@ -114,7 +115,7 @@ class FileEditor
 
 	private void updateTab() {
 		Path path = this.path.get();
-		tab.setText((path != null) ? path.getFileName().toString() : "Untitled");
+		tab.setText((path != null) ? path.getFileName().toString() : ResUtil.getString("Untitled"));
 		tab.setTooltip((path != null) ? new Tooltip(path.toString()) : null);
 		tab.setGraphic(isModified() ? new Text("*") : null);
 	}
@@ -197,8 +198,8 @@ class FileEditor
 			markdownEditorPane.setMarkdown(markdown);
 			markdownEditorPane.getUndoManager().mark();
 		} catch (IOException ex) {
-			Alert alert = mainWindow.createAlert(AlertType.ERROR, "Load",
-				"Failed to load '%s'.\n\nReason: %s", path, ex.getMessage());
+			Alert alert = mainWindow.createAlert(AlertType.ERROR, ResUtil.getString("Load"),
+				ResUtil.getString("LoadFail"), path, ex.getMessage());
 			alert.showAndWait();
 		}
 	}
@@ -222,8 +223,8 @@ class FileEditor
 			markdownEditorPane.getUndoManager().mark();
 			return true;
 		} catch (IOException ex) {
-			Alert alert = mainWindow.createAlert(AlertType.ERROR, "Save",
-				"Failed to save '%s'.\n\nReason: %s", path.get(), ex.getMessage());
+			Alert alert = mainWindow.createAlert(AlertType.ERROR, ResUtil.getString("Save"),
+				ResUtil.getString("SaveFail"), path.get(), ex.getMessage());
 			alert.showAndWait();
 			return false;
 		}

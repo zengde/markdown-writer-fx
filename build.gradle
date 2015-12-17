@@ -1,6 +1,7 @@
 version = '0.1'
 
 apply plugin: 'java'
+apply plugin: 'java-library-distribution'
 
 repositories {
 	maven {
@@ -24,5 +25,14 @@ jar {
 	manifest {
 		attributes 'Main-Class': 'org.markdownwriterfx.MarkdownWriterFXApp',
 				'Class-Path': configurations.compile.collect { 'lib/' + it.getName() }.join(' ')
+	}
+}
+
+distributions {
+	main {
+		baseName = 'markdown-writer-fx'
+		contents {
+			from { ['LICENSE', 'README.md'] }
+		}
 	}
 }

@@ -102,7 +102,7 @@ public class OptionsDialog
 
 			//======== generalTab ========
 			{
-				generalTab.setText("General");
+				generalTab.setText(ResUtil.getString("General"));
 				generalTab.setContent(generalOptionsPane);
 			}
 

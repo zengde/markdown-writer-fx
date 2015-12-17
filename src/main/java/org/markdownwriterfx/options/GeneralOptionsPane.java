@@ -53,7 +53,7 @@ public class GeneralOptionsPane
 		String defaultLineSeparator = System.getProperty( "line.separator", "\n" );
 		String defaultLineSeparatorStr = defaultLineSeparator.replace("\r", "CR").replace("\n", "LF");
 		lineSeparatorField.getItems().addAll(
-			new Item<String>(ResUtil.getString("Options_PlatformDefault")+" (" + defaultLineSeparatorStr + ')', null ),
+			new Item<String>(ResUtil.getString("PlatformDefault")+" (" + defaultLineSeparatorStr + ')', null ),
 			new Item<String>( "Windows (CRLF)", "\r\n" ),
 			new Item<String>( "Unix (LF)", "\n" ));
 
@@ -64,7 +64,7 @@ public class GeneralOptionsPane
 		SortedMap<String, Charset> availableCharsets = Charset.availableCharsets();
 
 		ArrayList<Item<String>> values = new ArrayList<>(1 + availableCharsets.size());
-		values.add(new Item<String>(ResUtil.getString("Options_PlatformDefault")+" (" + Charset.defaultCharset().name() + ')', null));
+		values.add(new Item<String>(ResUtil.getString("PlatformDefault")+" (" + Charset.defaultCharset().name() + ')', null));
 		for (String name : availableCharsets.keySet())
 			values.add(new Item<String>(name, name));
 		return values;
@@ -98,17 +98,17 @@ public class GeneralOptionsPane
 		setRows("[][]para[]");
 
 		//---- lineSeparatorLabel ----
-		lineSeparatorLabel.setText("_Line separator:");
+		lineSeparatorLabel.setText(ResUtil.getString("LineSeparator"));
 		lineSeparatorLabel.setMnemonicParsing(true);
 		add(lineSeparatorLabel, "cell 0 0");
 		add(lineSeparatorField, "cell 1 0");
 
 		//---- lineSeparatorLabel2 ----
-		lineSeparatorLabel2.setText("(applies to new files only)");
+		lineSeparatorLabel2.setText(ResUtil.getString("ApplyToNewFile"));
 		add(lineSeparatorLabel2, "cell 2 0");
 
 		//---- encodingLabel ----
-		encodingLabel.setText("En_coding:");
+		encodingLabel.setText(ResUtil.getString("Encoding"));
 		encodingLabel.setMnemonicParsing(true);
 		add(encodingLabel, "cell 0 1");
 
@@ -117,7 +117,7 @@ public class GeneralOptionsPane
 		add(encodingField, "cell 1 1");
 
 		//---- showWhitespaceCheckBox ----
-		showWhitespaceCheckBox.setText("Show _Whitespace Characters");
+		showWhitespaceCheckBox.setText(ResUtil.getString("ShowWhiteSpaces"));
 		add(showWhitespaceCheckBox, "cell 0 2 3 1,growx 0,alignx left");
 		// JFormDesigner - End of component initialization  //GEN-END:initComponents
 

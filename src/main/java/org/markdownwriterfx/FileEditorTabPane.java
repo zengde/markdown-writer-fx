@@ -49,6 +49,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import org.markdownwriterfx.util.ResUtil;
 import org.markdownwriterfx.util.Utils;
 
 /**
@@ -139,7 +140,7 @@ class FileEditorTabPane
 	}
 
 	FileEditor[] openEditor() {
-		FileChooser fileChooser = createFileChooser("Open Markdown File");
+		FileChooser fileChooser = createFileChooser(ResUtil.getString("OpenMarkdownFile"));
 		List<File> selectedFiles = fileChooser.showOpenMultipleDialog(mainWindow.getScene().getWindow());
 		if (selectedFiles == null)
 			return null;
@@ -212,8 +213,8 @@ class FileEditorTabPane
 		if (!fileEditor.isModified())
 			return true;
 
-		Alert alert = mainWindow.createAlert(AlertType.CONFIRMATION, "Close",
-			"'%s' has been modified. Save changes?", fileEditor.getTab().getText());
+		Alert alert = mainWindow.createAlert(AlertType.CONFIRMATION, ResUtil.getString("Close"),
+			ResUtil.getString("CloseFileModified"), fileEditor.getTab().getText());
 		alert.getButtonTypes().setAll(ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
 
 		ButtonType result = alert.showAndWait().get();

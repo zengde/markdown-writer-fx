@@ -33,6 +33,7 @@ import javafx.scene.control.Tooltip;
 import javafx.stage.DirectoryChooser;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import org.markdownwriterfx.util.ResUtil;
 
 /**
  * Button that opens a directory chooser to select a local directory for a URL in markdown.
@@ -44,13 +45,13 @@ public class BrowseDirectoryButton
 {
 	public BrowseDirectoryButton() {
 		setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.FOLDER_ALT, "1.2em"));
-		setTooltip(new Tooltip("Browse for local folder"));
+		setTooltip(new Tooltip(ResUtil.getString("LocalFolder")));
 	}
 
 	@Override
 	protected void browse(ActionEvent e) {
 		DirectoryChooser directoryChooser = new DirectoryChooser();
-		directoryChooser.setTitle("Browse for local folder");
+		directoryChooser.setTitle(ResUtil.getString("LocalFolder"));
 		directoryChooser.setInitialDirectory(getInitialDirectory());
 		File result = directoryChooser.showDialog(getScene().getWindow());
 		if (result != null)

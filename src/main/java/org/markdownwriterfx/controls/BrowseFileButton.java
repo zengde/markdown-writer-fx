@@ -42,6 +42,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import org.markdownwriterfx.util.ResUtil;
 
 /**
  * Button that opens a file chooser to select a local file for a URL in markdown.
@@ -55,7 +56,7 @@ public class BrowseFileButton
 
 	public BrowseFileButton() {
 		setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.FILE_ALT, "1.2em"));
-		setTooltip(new Tooltip("Browse for local file"));
+		setTooltip(new Tooltip(ResUtil.getString("LocalFile")));
 		setOnAction(this::browse);
 
 		disableProperty().bind(basePath.isNull());
@@ -87,9 +88,9 @@ public class BrowseFileButton
 
 	protected void browse(ActionEvent e) {
 		FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("Browse for local file");
+		fileChooser.setTitle(ResUtil.getString("LocalFile"));
 		fileChooser.getExtensionFilters().addAll(extensionFilters);
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("All Files", "*.*"));
+		fileChooser.getExtensionFilters().add(new ExtensionFilter(ResUtil.getString("AllFilesFilter"), "*.*"));
 		fileChooser.setInitialDirectory(getInitialDirectory());
 		File result = fileChooser.showOpenDialog(getScene().getWindow());
 		if (result != null)

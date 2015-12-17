@@ -41,6 +41,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Window;
 import org.markdownwriterfx.controls.BrowseFileButton;
 import org.markdownwriterfx.controls.EscapeTextField;
+import org.markdownwriterfx.util.ResUtil;
 import org.tbee.javafx.scene.layout.fxml.MigPane;
 
 /**
@@ -54,14 +55,14 @@ public class ImageDialog
 	private final StringProperty image = new SimpleStringProperty();
 
 	public ImageDialog(Window owner, Path basePath) {
-		setTitle("Image");
+		setTitle(ResUtil.getString("Image"));
 		initOwner(owner);
 		setResizable(true);
 
 		initComponents();
 
 		linkBrowseFileButton.setBasePath(basePath);
-		linkBrowseFileButton.addExtensionFilter(new ExtensionFilter("Images", "*.png", "*.gif", "*.jpg"));
+		linkBrowseFileButton.addExtensionFilter(new ExtensionFilter(ResUtil.getString("ImagesFilter"), "*.png", "*.gif", "*.jpg"));
 		linkBrowseFileButton.urlProperty().bindBidirectional(urlField.escapedTextProperty());
 
 		DialogPane dialogPane = getDialogPane();
@@ -109,7 +110,7 @@ public class ImageDialog
 			pane.setRows("[][][][]");
 
 			//---- urlLabel ----
-			urlLabel.setText("Image URL:");
+			urlLabel.setText(ResUtil.getString("ImageUrl"));
 			pane.add(urlLabel, "cell 0 0");
 
 			//---- urlField ----
@@ -120,7 +121,7 @@ public class ImageDialog
 			pane.add(linkBrowseFileButton, "cell 2 0");
 
 			//---- textLabel ----
-			textLabel.setText("Alternate Text:");
+			textLabel.setText(ResUtil.getString("ImageText"));
 			pane.add(textLabel, "cell 0 1");
 
 			//---- textField ----
@@ -128,12 +129,12 @@ public class ImageDialog
 			pane.add(textField, "cell 1 1 2 1");
 
 			//---- titleLabel ----
-			titleLabel.setText("Title (tooltip):");
+			titleLabel.setText(ResUtil.getString("ImageTitle"));
 			pane.add(titleLabel, "cell 0 2");
 			pane.add(titleField, "cell 1 2 2 1");
 
 			//---- previewLabel ----
-			previewLabel.setText("Markdown Preview:");
+			previewLabel.setText(ResUtil.getString("MdPreview"));
 			pane.add(previewLabel, "cell 0 3");
 			pane.add(previewField, "cell 1 3 2 1");
 		}

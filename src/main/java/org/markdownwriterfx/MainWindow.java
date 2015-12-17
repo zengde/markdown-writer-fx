@@ -153,7 +153,7 @@ class MainWindow
 		Action insertLinkAction = new Action(ResUtil.getString("insertLinkAction"), "Shortcut+L", LINK,
 				e -> getActiveEditor().insertLink(),
 				activeFileEditorIsNull);
-		Action insertImageAction = new Action(ResUtil.getString("insertImageAction"), "Shortcut+G", PICTURE_ALT,
+		Action insertImageAction = new Action(ResUtil.getString("Image"), "Shortcut+G", PICTURE_ALT,
 				e -> getActiveEditor().insertImage(),
 				activeFileEditorIsNull);
 
